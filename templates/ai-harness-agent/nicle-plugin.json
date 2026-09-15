@@ -1,0 +1,47 @@
+{
+  "$schema": "https://nicle.dev/schema/plugin.json",
+  "id": "ai-harness-agent",
+  "name": "AI Harness Agent",
+  "version": "1.0.0",
+  "description": "Multi-agent task harness for Nicle IDE: coordinates Agent A (Coder) and Agent B (Reviewer) for any AI model",
+  "author": "Nicle Community",
+  "homepage": "https://nicle.dev",
+  "pluginType": "command",
+  "runtime": {
+    "type": "node",
+    "minVersion": "18.0.0"
+  },
+  "commands": [
+    {
+      "id": "harness.review",
+      "title": "AI Harness: Run Reviewer Audit (Agent B)",
+      "description": "Adversarial review checking git diff for safety, unwrap(), memory bounds, and Svelte runes",
+      "actionType": "terminal",
+      "command": "npm run harness:review"
+    },
+    {
+      "id": "harness.verify",
+      "title": "AI Harness: Run Full Verification Pipeline (Agent C)",
+      "description": "Executes svelte-check, plugin schema validator, and review checks",
+      "actionType": "terminal",
+      "command": "npm run harness:verify"
+    },
+    {
+      "id": "harness.coder",
+      "title": "AI Harness: Dispatch Coder Agent (Agent A)",
+      "description": "Generates a standardized Agent A task envelope with PRD & rust-skills invariants",
+      "actionType": "terminal",
+      "command": "npm run harness -- dispatch --role coder"
+    },
+    {
+      "id": "harness.reviewer",
+      "title": "AI Harness: Dispatch Reviewer Agent (Agent B)",
+      "description": "Generates a standardized Agent B review envelope for auditing diffs",
+      "actionType": "terminal",
+      "command": "npm run harness -- dispatch --role reviewer"
+    }
+  ],
+  "environment": {
+    "FORCE_COLOR": "1"
+  }
+}

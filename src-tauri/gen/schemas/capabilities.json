@@ -1,0 +1,1 @@
+{"main":{"identifier":"main","description":"Local editor window permissions","local":true,"windows":["main"],"permissions":["core:default","core:window:allow-close","core:window:allow-destroy","dialog:allow-open","dialog:allow-confirm","dialog:allow-message"]}}

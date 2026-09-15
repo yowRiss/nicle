@@ -1,0 +1,39 @@
+{
+  "$schema": "https://nicle.dev/schema/plugin.json",
+  "id": "sample-companion",
+  "name": "sample-companion",
+  "version": "1.0.0",
+  "description": "High-performance background companion service powered by Bun with live dashboard and health probe",
+  "author": "Nicle Community",
+  "homepage": "https://nicle.dev",
+  "pluginType": "service",
+  "runtime": {
+    "type": "bun",
+    "minVersion": "1.0.0"
+  },
+  "service": {
+    "entry": "server.ts",
+    "defaultPort": 3050,
+    "readinessPath": "/health",
+    "dashboardPath": "/"
+  },
+  "commands": [
+    {
+      "id": "sample-companion.ping",
+      "title": "Dev Companion: Ping Health Endpoint",
+      "description": "Probe companion service health in terminal",
+      "actionType": "terminal",
+      "command": "curl -s http://127.0.0.1:3050/health"
+    },
+    {
+      "id": "sample-companion.metrics",
+      "title": "Dev Companion: Inspect Service Metrics",
+      "description": "Fetch live memory and process metrics from companion",
+      "actionType": "terminal",
+      "command": "curl -s http://127.0.0.1:3050/metrics"
+    }
+  ],
+  "environment": {
+    "NODE_ENV": "development"
+  }
+}

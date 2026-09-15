@@ -1,0 +1,47 @@
+{
+  "$schema": "https://nicle.dev/schema/plugin.json",
+  "id": "discord-presence",
+  "name": "Discord Rich Presence",
+  "version": "1.0.0",
+  "description": "Displays your active workspace, current file, line count, and elapsed coding time on Discord",
+  "author": "Nicle Community",
+  "homepage": "https://github.com/nicle-ide/nicle",
+  "pluginType": "service",
+  "runtime": {
+    "type": "node",
+    "minVersion": "18.0.0"
+  },
+  "service": {
+    "entry": "server.js",
+    "defaultPort": 3070,
+    "readinessPath": "/health",
+    "dashboardPath": "/",
+    "activityPath": "/activity"
+  },
+  "commands": [
+    {
+      "id": "discord.reconnect",
+      "title": "Discord Presence: Reconnect",
+      "description": "Trigger reconnection to Discord IPC socket",
+      "actionType": "terminal",
+      "command": "curl -s http://127.0.0.1:3070/api/reconnect"
+    },
+    {
+      "id": "discord.dashboard",
+      "title": "Discord Presence: Open Dashboard",
+      "description": "Open Discord Rich Presence configuration dashboard",
+      "actionType": "terminal",
+      "command": "curl -s http://127.0.0.1:3070/api/open-dashboard"
+    },
+    {
+      "id": "discord.toggle_idle",
+      "title": "Discord Presence: Toggle Idle Status",
+      "description": "Toggle idle status on Discord Rich Presence",
+      "actionType": "terminal",
+      "command": "curl -s http://127.0.0.1:3070/api/toggle-idle"
+    }
+  ],
+  "environment": {
+    "NODE_ENV": "production"
+  }
+}

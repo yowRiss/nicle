@@ -1,0 +1,52 @@
+{
+  "$schema": "https://nicle.dev/schema/plugin.json",
+  "id": "claude-code",
+  "name": "Claude Code",
+  "version": "1.0.0",
+  "description": "Anthropic Claude Code CLI assistant integrated into Nicle IDE with Bun runtime",
+  "author": "Anthropic / Community",
+  "homepage": "https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview",
+  "pluginType": "cli",
+  "runtime": {
+    "type": "bun",
+    "minVersion": "1.0.0"
+  },
+  "install": {
+    "manager": "bun",
+    "package": "@anthropic-ai/claude-code",
+    "args": ["install", "-g", "@anthropic-ai/claude-code"]
+  },
+  "commands": [
+    {
+      "id": "claude.open",
+      "title": "Claude Code: Open in Terminal",
+      "description": "Start interactive Claude Code session in Nicle terminal",
+      "actionType": "terminal",
+      "command": "claude"
+    },
+    {
+      "id": "claude.review",
+      "title": "Claude Code: Review Git Diffs",
+      "description": "Ask Claude Code to review workspace git diffs and report findings",
+      "actionType": "terminal",
+      "command": "claude 'review git diffs and suggest improvements'"
+    },
+    {
+      "id": "claude.explain",
+      "title": "Claude Code: Explain Workspace",
+      "description": "Ask Claude Code to explain project architecture and entry points",
+      "actionType": "terminal",
+      "command": "claude 'explain the workspace architecture and key files'"
+    },
+    {
+      "id": "claude.compact",
+      "title": "Claude Code: Compact Conversation",
+      "description": "Run /compact inside Claude Code session",
+      "actionType": "terminal",
+      "command": "claude '/compact'"
+    }
+  ],
+  "environment": {
+    "FORCE_COLOR": "1"
+  }
+}

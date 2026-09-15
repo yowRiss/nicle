@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-harness": {
+      "source": "nicle/ai-harness",
+      "sourceType": "local",
+      "skillPath": "SKILL.md",
+      "computedHash": "876120632702ad65825d7f1fe15b02631cd388445241080d9cd05995374db37d"
+    },
+    "rust-skills": {
+      "source": "leonardomso/rust-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "9719e9ebd94783d3436ed26156bf9bf2e4c7f63b3220d9d17ff90cba55c92bb8"
+    }
+  }
+}

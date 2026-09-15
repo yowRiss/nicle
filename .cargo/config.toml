@@ -1,0 +1,6 @@
+[build]
+rustflags = ["-L", "/tmp/sysroot/lib", "-L", "/usr/lib64", "-C", "link-arg=/usr/lib64/ld-linux-x86-64.so.2"]
+
+[env]
+PKG_CONFIG_PATH = "/tmp/sysroot/pkgconfig:/home/ris/.local/share/flatpak/runtime/org.freedesktop.Sdk/x86_64/25.08/active/files/lib/x86_64-linux-gnu/pkgconfig:/home/ris/.local/share/flatpak/runtime/org.freedesktop.Sdk/x86_64/25.08/active/files/share/pkgconfig"
+PKG_CONFIG_SYSROOT_DIR = "/tmp/sysroot"

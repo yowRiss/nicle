@@ -1,0 +1,11 @@
+{
+  "name": "sample-companion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "bun run server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

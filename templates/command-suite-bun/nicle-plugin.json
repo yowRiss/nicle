@@ -1,0 +1,40 @@
+{
+  "$schema": "https://nicle.dev/schema/plugin.json",
+  "id": "command-suite-bun",
+  "name": "Command Suite (Bun)",
+  "version": "1.0.0",
+  "description": "Developer utility commands and workspace automation scripts powered by Bun",
+  "author": "Nicle Community",
+  "homepage": "https://nicle.dev",
+  "pluginType": "command",
+  "runtime": {
+    "type": "bun",
+    "minVersion": "1.0.0"
+  },
+  "commands": [
+    {
+      "id": "suite.info",
+      "title": "Command Suite: System & Environment Info",
+      "description": "Display runtime versions and active environment info in terminal",
+      "actionType": "terminal",
+      "command": "bun run suite.ts --info"
+    },
+    {
+      "id": "suite.clean",
+      "title": "Command Suite: Clean Build Artifacts",
+      "description": "Remove build artifacts and temporary cache files",
+      "actionType": "terminal",
+      "command": "bun run suite.ts --clean"
+    },
+    {
+      "id": "suite.test",
+      "title": "Command Suite: Run Project Tests",
+      "description": "Execute workspace test suites in the terminal",
+      "actionType": "terminal",
+      "command": "bun test || npm test"
+    }
+  ],
+  "environment": {
+    "FORCE_COLOR": "1"
+  }
+}
