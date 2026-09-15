@@ -2,7 +2,16 @@
 
 A small desktop code editor built with Rust, Tauri 2, Svelte 5, CodeMirror 6 and xterm.js. No Electron.
 
-## Run
+## Releases & Installation
+
+Pre-built binaries and installers are available for Windows and Linux on the [GitHub Releases](https://github.com/yowRiss/nicle/releases) page:
+
+- **Windows**: `.exe` (NSIS Installer) and `.msi`
+- **Fedora / RHEL / openSUSE**: `.rpm` package
+- **Debian / Ubuntu**: `.deb` package
+- **Universal Linux**: `.AppImage` (standalone portable)
+
+## Run & Development
 
 Install Node.js 22+, Rust, and the [Tauri 2 platform prerequisites](https://v2.tauri.app/start/prerequisites/). On Fedora, the development packages include `gtk3-devel` and `webkit2gtk4.1-devel`.
 
@@ -11,13 +20,13 @@ npm ci
 npm run tauri dev
 ```
 
-Create a standalone executable:
+To build installers and packages locally:
 
 ```sh
 npm run tauri build
 ```
 
-The executable is `src-tauri/target/release/nicle` (Windows: `nicle.exe`). Packaging installers is disabled; the executable uses the operating system's webview. `npm run dev` alone shows the UI in a browser; filesystem and process features require the desktop app.
+The resulting packages and binaries are generated in `src-tauri/target/release/bundle/`.
 
 ## Use
 
